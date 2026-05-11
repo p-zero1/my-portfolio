@@ -1,8 +1,10 @@
 import type { NextConfig } from "next";
 
+const isProd = process.env.GITHUB_PAGES === 'true';
+
 const nextConfig: NextConfig = {
   output: 'export',
-  basePath: '/my-portfolio',
+  basePath: isProd ? '/my-portfolio' : '',
   images: { unoptimized: true },
 };
 

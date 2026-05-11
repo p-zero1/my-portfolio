@@ -41,10 +41,10 @@ export default function SignalGraph() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7 }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-text-1 tracking-tight leading-[1.1] mb-5">
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-text-1 tracking-[0.01em] leading-[1.08] mb-5">
                 Currently running
               </h2>
-              <p className="text-base text-text-3 leading-relaxed mb-12 max-w-sm">
+              <p className="font-sans text-base text-text-3 leading-relaxed mb-12 max-w-sm font-light">
                 Active threads. The concepts and technologies absorbing the most processing cycles right now.
               </p>
             </motion.div>

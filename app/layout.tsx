@@ -7,17 +7,17 @@ import SystemStatusBar from '@/components/layout/SystemStatusBar'
 import { site } from '@/content/site'
 
 const syne = Syne({
-  variable: '--font-display',
+  variable: '--font-syne',
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800'],
 })
 const dmSans = DM_Sans({
-  variable: '--font-sans',
+  variable: '--font-dm',
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
 })
 const firaCode = Fira_Code({
-  variable: '--font-mono',
+  variable: '--font-fira',
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
 })

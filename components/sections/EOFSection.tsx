@@ -28,12 +28,12 @@ export default function EOFSection() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-text-1 tracking-tight leading-tight mb-6">
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-text-1 tracking-[0.01em] leading-[1.08] mb-6">
               {contact.heading.line1}
               <br />
               <span className="gradient-text">{contact.heading.line2}</span>
             </h2>
-            <p className="text-base text-text-3 leading-relaxed mb-12 max-w-md">
+            <p className="font-sans text-base text-text-3 leading-relaxed mb-12 max-w-md font-light">
               {contact.description}
             </p>
           </motion.div>

@@ -85,10 +85,10 @@ export default function TerminalExplorer() {
           transition={{ duration: 0.7 }}
           className="mb-10"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-text-1 tracking-tight leading-[1.1]">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-text-1 tracking-[0.01em] leading-[1.08]">
             Projects & Explorations
           </h2>
-          <p className="mt-4 text-base text-text-3">
+          <p className="font-sans mt-4 text-base text-text-3 font-light">
             Experiments, tools, and systems. Use the terminal or click to explore.
           </p>
         </motion.div>

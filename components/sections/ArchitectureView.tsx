@@ -65,11 +65,11 @@ function ExperienceDetail({ exp, isInView }: { exp: ExperienceEntry; isInView: b
             />
           </div>
 
-          <h2 className="text-5xl md:text-6xl font-bold text-text-1 tracking-tight mb-3">
+          <h2 className="font-display text-5xl md:text-6xl font-bold text-text-1 tracking-[0.01em] leading-[1.05] mb-3">
             {exp.company}
           </h2>
-          <p className="text-xl text-purple-light font-medium mb-6">{exp.role}</p>
-          <p className="text-base text-text-3 leading-relaxed mb-10 max-w-lg">
+          <p className="font-display text-xl text-purple-light font-medium tracking-[0.01em] mb-6">{exp.role}</p>
+          <p className="font-sans text-base text-text-3 leading-relaxed mb-10 max-w-lg font-light">
             {exp.tagline}
           </p>
         </motion.div>

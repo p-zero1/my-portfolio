@@ -28,10 +28,10 @@
   --color-text-3: #5a6480;
   --color-text-4: #2e3650;
 
-  /* Fonts */
-  --font-display: var(--font-display);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-mono);
+  /* Fonts — unique names avoid circular reference with Tailwind defaults */
+  --font-display: var(--font-syne);
+  --font-sans: var(--font-dm);
+  --font-mono: var(--font-fira);
 }
 
 /* ── Base ── */
@@ -47,7 +47,7 @@ html {
 body {
   background: #04040b;
   color: #f2f2f8;
-  font-family: var(--font-sans), system-ui, sans-serif;
+  font-family: var(--font-dm), system-ui, sans-serif;
   font-size: 16px;
   line-height: 1.7;
   font-weight: 400;
@@ -56,9 +56,9 @@ body {
   overflow-x: hidden;
 }
 
-/* ── Display headings — Clash Display ── */
+/* ── Display headings — Syne ── */
 h1, h2, h3, h4 {
-  font-family: var(--font-display), system-ui, sans-serif;
+  font-family: var(--font-syne), system-ui, sans-serif;
   letter-spacing: 0.01em;
   font-weight: 700;
   line-height: 1.1;
@@ -78,12 +78,12 @@ h1, h2, h3, h4 {
 
 /* ── Typography utilities ── */
 .font-display {
-  font-family: var(--font-display), system-ui, sans-serif;
+  font-family: var(--font-syne), system-ui, sans-serif;
   letter-spacing: 0.01em;
 }
-.font-sans { font-family: var(--font-sans), system-ui, sans-serif; }
+.font-sans { font-family: var(--font-dm), system-ui, sans-serif; }
 .font-mono {
-  font-family: var(--font-mono), 'Fira Code', 'Courier New', monospace;
+  font-family: var(--font-fira), 'Courier New', monospace;
   font-variant-ligatures: contextual;
 }
 

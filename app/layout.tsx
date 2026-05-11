@@ -1,13 +1,27 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Oxanium, Outfit, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import LenisProvider from '@/components/layout/LenisProvider'
 import CursorGlow from '@/components/layout/CursorGlow'
 import SystemStatusBar from '@/components/layout/SystemStatusBar'
 import { site } from '@/content/site'
 
-const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
-const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] })
+const oxanium = Oxanium({
+  variable: '--font-display',
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+})
+const outfit = Outfit({
+  variable: '--font-sans',
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+})
+const jetbrainsMono = JetBrains_Mono({
+  variable: '--font-mono',
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+})
 
 export const metadata: Metadata = {
   title: site.title,
@@ -23,7 +37,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${oxanium.variable} ${outfit.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
       <body className="bg-base text-text-1 antialiased overflow-x-hidden" suppressHydrationWarning>
         <LenisProvider>
           {/* Scan line effect */}

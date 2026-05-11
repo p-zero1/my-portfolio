@@ -67,7 +67,7 @@ export default function TerminalExplorer() {
   }, [history])
 
   return (
-    <section id="labs" className="relative py-32 overflow-hidden">
+    <section id="labs" className="relative py-20 overflow-hidden">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -85,7 +85,7 @@ export default function TerminalExplorer() {
           transition={{ duration: 0.7 }}
           className="mb-10"
         >
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-text-1 tracking-[0.01em] leading-[1.08]">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-text-1 tracking-[0.01em] leading-[1.08]">
             Projects & Explorations
           </h2>
           <p className="font-sans mt-4 text-base text-text-3 font-light">

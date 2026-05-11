@@ -10,7 +10,7 @@ export default function EOFSection() {
   const isInView = useInView(ref, { once: true, margin: '-10%' })
 
   return (
-    <section id="eof" className="relative py-32 pb-48 overflow-hidden">
+    <section id="eof" className="relative py-20 pb-32 overflow-hidden">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -28,7 +28,7 @@ export default function EOFSection() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-text-1 tracking-[0.01em] leading-[1.08] mb-6">
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-text-1 tracking-[0.01em] leading-[1.08] mb-5">
               {contact.heading.line1}
               <br />
               <span className="gradient-text">{contact.heading.line2}</span>

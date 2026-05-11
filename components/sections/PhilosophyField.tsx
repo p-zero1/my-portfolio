@@ -10,7 +10,7 @@ export default function PhilosophyField() {
   const isInView = useInView(ref, { once: true, margin: '-10%' })
 
   return (
-    <section id="mindset" className="relative py-32 overflow-hidden">
+    <section id="mindset" className="relative py-20 overflow-hidden">
       {/* Top gradient bleed */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -30,7 +30,7 @@ export default function PhilosophyField() {
           transition={{ duration: 0.7 }}
           className="mb-16 max-w-xl"
         >
-          <h2 className="font-display text-4xl md:text-5xl font-extrabold text-text-1 tracking-[0.01em] leading-[1.08]">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-text-1 tracking-[0.01em] leading-[1.08]">
             Engineering philosophy
           </h2>
           <p className="mt-4 text-text-3 text-lg leading-relaxed font-sans font-light">

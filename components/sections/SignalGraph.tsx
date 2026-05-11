@@ -20,7 +20,7 @@ export default function SignalGraph() {
   const maxWeight = Math.max(...exploring.map(t => t.weight))
 
   return (
-    <section id="signal" className="relative py-32 overflow-hidden">
+    <section id="signal" className="relative py-20 overflow-hidden">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -41,7 +41,7 @@ export default function SignalGraph() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7 }}
             >
-              <h2 className="font-display text-4xl md:text-5xl font-bold text-text-1 tracking-[0.01em] leading-[1.08] mb-5">
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-text-1 tracking-[0.01em] leading-[1.08] mb-4">
                 Currently running
               </h2>
               <p className="font-sans text-base text-text-3 leading-relaxed mb-12 max-w-sm font-light">

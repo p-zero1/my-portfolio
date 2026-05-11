@@ -16,34 +16,34 @@ const read = (p: string) => fs.readFileSync(path.join(root, p), 'utf-8')
 describe('layout.tsx — font imports', () => {
   const layout = read('app/layout.tsx')
 
-  it('imports Syne for display headings', () => {
-    expect(layout).toMatch(/import.*Syne.*from 'next\/font\/google'/)
+  it('imports Outfit for display headings', () => {
+    expect(layout).toMatch(/import.*Outfit.*from 'next\/font\/google'/)
   })
 
-  it('imports DM_Sans for body text', () => {
-    expect(layout).toMatch(/import.*DM_Sans.*from 'next\/font\/google'/)
+  it('imports Plus_Jakarta_Sans for body text', () => {
+    expect(layout).toMatch(/import.*Plus_Jakarta_Sans.*from 'next\/font\/google'/)
   })
 
-  it('imports Fira_Code for monospace text', () => {
-    expect(layout).toMatch(/import.*Fira_Code.*from 'next\/font\/google'/)
+  it('imports JetBrains_Mono for monospace text', () => {
+    expect(layout).toMatch(/import.*JetBrains_Mono.*from 'next\/font\/google'/)
   })
 
-  it('uses unique variable name --font-syne (no circular reference)', () => {
-    expect(layout).toMatch(/variable:\s*'--font-syne'/)
+  it('uses unique variable name --font-outfit (no circular reference)', () => {
+    expect(layout).toMatch(/variable:\s*'--font-outfit'/)
   })
 
-  it('uses unique variable name --font-dm (no circular reference)', () => {
-    expect(layout).toMatch(/variable:\s*'--font-dm'/)
+  it('uses unique variable name --font-jakarta (no circular reference)', () => {
+    expect(layout).toMatch(/variable:\s*'--font-jakarta'/)
   })
 
-  it('uses unique variable name --font-fira (no circular reference)', () => {
-    expect(layout).toMatch(/variable:\s*'--font-fira'/)
+  it('uses unique variable name --font-jetbrains (no circular reference)', () => {
+    expect(layout).toMatch(/variable:\s*'--font-jetbrains'/)
   })
 
   it('applies all font variables to <html> element', () => {
-    expect(layout).toMatch(/syne\.variable/)
-    expect(layout).toMatch(/dmSans\.variable/)
-    expect(layout).toMatch(/firaCode\.variable/)
+    expect(layout).toMatch(/outfit\.variable/)
+    expect(layout).toMatch(/jakarta\.variable/)
+    expect(layout).toMatch(/jetbrains\.variable/)
   })
 })
 
@@ -52,33 +52,33 @@ describe('layout.tsx — font imports', () => {
 describe('globals.css — font variables', () => {
   const css = read('app/globals.css')
 
-  it('maps --font-display to --font-syne (no circular ref)', () => {
-    expect(css).toMatch(/--font-display:\s*var\(--font-syne\)/)
+  it('maps --font-display to --font-outfit (no circular ref)', () => {
+    expect(css).toMatch(/--font-display:\s*var\(--font-outfit\)/)
   })
 
-  it('maps --font-sans to --font-dm (no circular ref)', () => {
-    expect(css).toMatch(/--font-sans:\s*var\(--font-dm\)/)
+  it('maps --font-sans to --font-jakarta (no circular ref)', () => {
+    expect(css).toMatch(/--font-sans:\s*var\(--font-jakarta\)/)
   })
 
-  it('maps --font-mono to --font-fira (no circular ref)', () => {
-    expect(css).toMatch(/--font-mono:\s*var\(--font-fira\)/)
+  it('maps --font-mono to --font-jetbrains (no circular ref)', () => {
+    expect(css).toMatch(/--font-mono:\s*var\(--font-jetbrains\)/)
   })
 
-  it('body uses DM Sans (--font-dm)', () => {
-    expect(css).toMatch(/font-family:\s*var\(--font-dm\)/)
+  it('body uses Plus Jakarta Sans (--font-jakarta)', () => {
+    expect(css).toMatch(/font-family:\s*var\(--font-jakarta\)/)
   })
 
-  it('h1-h4 use Syne (--font-syne)', () => {
+  it('h1-h4 use Outfit (--font-outfit)', () => {
     expect(css).toMatch(/h1,\s*h2,\s*h3,\s*h4/)
-    expect(css).toMatch(/font-family:\s*var\(--font-syne\)/)
+    expect(css).toMatch(/font-family:\s*var\(--font-outfit\)/)
   })
 
-  it('defines .font-display utility using --font-syne', () => {
-    expect(css).toMatch(/\.font-display[\s\S]*?font-family:\s*var\(--font-syne\)/)
+  it('defines .font-display utility using --font-outfit', () => {
+    expect(css).toMatch(/\.font-display[\s\S]*?font-family:\s*var\(--font-outfit\)/)
   })
 
-  it('defines .font-mono utility using --font-fira', () => {
-    expect(css).toMatch(/\.font-mono[\s\S]*?font-family:\s*var\(--font-fira\)/)
+  it('defines .font-mono utility using --font-jetbrains', () => {
+    expect(css).toMatch(/\.font-mono[\s\S]*?font-family:\s*var\(--font-jetbrains\)/)
   })
 
   it('does NOT have circular self-references like var(--font-sans): var(--font-sans)', () => {
@@ -141,13 +141,18 @@ describe('no stale font references', () => {
     expect(layout).not.toMatch(/Geist/i)
   })
 
-  it('globals.css does not reference Chakra Petch', () => {
+  it('globals.css does not reference old Syne font variable', () => {
     const css = read('app/globals.css')
-    expect(css).not.toMatch(/Chakra/i)
+    expect(css).not.toMatch(/--font-syne/)
   })
 
-  it('globals.css does not reference Oxanium', () => {
+  it('globals.css does not reference old DM Sans variable', () => {
     const css = read('app/globals.css')
-    expect(css).not.toMatch(/Oxanium/i)
+    expect(css).not.toMatch(/--font-dm[^-]/)
+  })
+
+  it('globals.css does not reference old Fira Code variable', () => {
+    const css = read('app/globals.css')
+    expect(css).not.toMatch(/--font-fira/)
   })
 })

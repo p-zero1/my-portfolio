@@ -65,7 +65,7 @@ function ExperienceDetail({ exp, isInView }: { exp: ExperienceEntry; isInView: b
             />
           </div>
 
-          <h2 className="font-display text-5xl md:text-6xl font-bold text-text-1 tracking-[0.01em] leading-[1.05] mb-3">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-text-1 tracking-[0.01em] leading-[1.05] mb-3">
             {exp.company}
           </h2>
           <p className="font-display text-xl text-purple-light font-medium tracking-[0.01em] mb-6">{exp.role}</p>
@@ -212,7 +212,7 @@ export default function ArchitectureView() {
   const hasMultiple = experiences.length > 1
 
   return (
-    <section id="experience" className="relative py-32 overflow-hidden">
+    <section id="experience" className="relative py-20 overflow-hidden">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{

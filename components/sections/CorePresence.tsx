@@ -19,7 +19,7 @@ export default function CorePresence() {
   }, [])
 
   return (
-    <section id="identity" className="relative min-h-screen flex items-center py-32 overflow-hidden">
+    <section id="identity" className="relative min-h-screen flex items-center py-20 overflow-hidden">
       <div className="absolute inset-0 bg-grid-fine opacity-30 pointer-events-none" aria-hidden />
       <div
         className="absolute inset-0 pointer-events-none"

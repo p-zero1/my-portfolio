@@ -1,19 +1,21 @@
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  /* Surface system */
-  --color-base: #050508;
-  --color-raised: #09090f;
-  --color-elevated: #0e0e18;
-  --color-float: #141421;
+  /* Surface system — richer depth */
+  --color-base: #04040b;
+  --color-raised: #080810;
+  --color-elevated: #0d0d1a;
+  --color-float: #121224;
 
-  /* Purple identity */
+  /* Purple identity — more saturated, cinematic */
   --color-purple: #7c3aed;
   --color-purple-light: #a78bfa;
   --color-purple-pale: #c4b5fd;
   --color-purple-dim: #4c1d95;
 
-  /* Terminal green — authentic to the engineer */
+  /* Terminal green */
   --color-terminal: #00ff88;
   --color-terminal-dim: #00cc6a;
   --color-terminal-muted: #00ff8820;
@@ -22,15 +24,15 @@
   --color-fuchsia: #d946ef;
   --color-fuchsia-dim: #a21caf;
 
-  /* Text scale */
-  --color-text-1: #f0f0f5;
-  --color-text-2: #94a3b8;
-  --color-text-3: #64748b;
-  --color-text-4: #334155;
+  /* Text — warmer, more cinematic */
+  --color-text-1: #f2f2f8;
+  --color-text-2: #9aa0b8;
+  --color-text-3: #5a6480;
+  --color-text-4: #2e3650;
 
   /* Fonts */
-  --font-display: var(--font-display);
-  --font-sans: var(--font-sans);
+  --font-display: 'Clash Display', system-ui, sans-serif;
+  --font-sans: 'Satoshi', system-ui, sans-serif;
   --font-mono: var(--font-mono);
 }
 
@@ -40,97 +42,122 @@
 }
 
 html {
-  scroll-behavior: auto; /* Lenis handles this */
+  scroll-behavior: auto;
   overflow-x: hidden;
 }
 
 body {
-  background: #050508;
-  color: #f0f0f5;
-  font-family: var(--font-sans), system-ui, sans-serif;
+  background: #04040b;
+  color: #f2f2f8;
+  font-family: 'Satoshi', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
+/* ── Display headings — Clash Display ── */
 h1, h2, h3, h4 {
-  font-family: var(--font-display), system-ui, sans-serif;
-  letter-spacing: 0.02em;
-  font-weight: 700;
+  font-family: 'Clash Display', system-ui, sans-serif;
+  letter-spacing: 0.01em;
+  font-weight: 600;
+  line-height: 1.1;
 }
 
 /* ── Selection ── */
 ::selection {
-  background: rgba(124, 58, 237, 0.35);
-  color: #c4b5fd;
+  background: rgba(124, 58, 237, 0.4);
+  color: #e2d9ff;
 }
 
 /* ── Scrollbar ── */
-::-webkit-scrollbar { width: 3px; }
-::-webkit-scrollbar-track { background: #050508; }
-::-webkit-scrollbar-thumb { background: #7c3aed44; border-radius: 2px; }
-::-webkit-scrollbar-thumb:hover { background: #7c3aed88; }
+::-webkit-scrollbar { width: 2px; }
+::-webkit-scrollbar-track { background: #04040b; }
+::-webkit-scrollbar-thumb { background: rgba(124, 58, 237, 0.3); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(124, 58, 237, 0.6); }
 
-/* ── Typography ── */
-.font-display { font-family: var(--font-display), system-ui, sans-serif; letter-spacing: 0.02em; }
-.font-sans    { font-family: var(--font-sans), system-ui, sans-serif; }
-.font-mono    { font-family: var(--font-mono), 'Courier New', monospace; font-variant-ligatures: common-ligatures; }
-
-/* Fira Code ligatures */
-@supports (font-variant-ligatures: contextual) {
-  .font-mono { font-variant-ligatures: contextual; }
+/* ── Typography utilities ── */
+.font-display {
+  font-family: 'Clash Display', system-ui, sans-serif;
+  letter-spacing: 0.01em;
+}
+.font-sans { font-family: 'Satoshi', system-ui, sans-serif; }
+.font-mono {
+  font-family: var(--font-mono), 'Fira Code', 'Courier New', monospace;
+  font-variant-ligatures: contextual;
 }
 
 /* ── Glow utilities ── */
 .glow-purple {
-  box-shadow: 0 0 20px rgba(124, 58, 237, 0.15), 0 0 60px rgba(124, 58, 237, 0.06);
+  box-shadow:
+    0 0 20px rgba(124, 58, 237, 0.18),
+    0 0 60px rgba(124, 58, 237, 0.08),
+    0 0 120px rgba(124, 58, 237, 0.04);
 }
 .glow-purple-strong {
-  box-shadow: 0 0 30px rgba(124, 58, 237, 0.3), 0 0 80px rgba(124, 58, 237, 0.12);
+  box-shadow:
+    0 0 30px rgba(124, 58, 237, 0.35),
+    0 0 80px rgba(124, 58, 237, 0.15),
+    0 0 160px rgba(124, 58, 237, 0.06);
 }
 .glow-terminal {
-  box-shadow: 0 0 20px rgba(0, 255, 136, 0.12), 0 0 60px rgba(0, 255, 136, 0.04);
+  box-shadow:
+    0 0 20px rgba(0, 255, 136, 0.15),
+    0 0 60px rgba(0, 255, 136, 0.05);
 }
 .text-glow-purple {
-  text-shadow: 0 0 30px rgba(167, 139, 250, 0.5);
+  text-shadow:
+    0 0 20px rgba(167, 139, 250, 0.6),
+    0 0 60px rgba(124, 58, 237, 0.3);
 }
 .text-glow-terminal {
-  text-shadow: 0 0 20px rgba(0, 255, 136, 0.6);
+  text-shadow:
+    0 0 20px rgba(0, 255, 136, 0.7),
+    0 0 40px rgba(0, 255, 136, 0.3);
 }
 
-/* ── Glass system ── */
+/* ── Glass system — more refined depth ── */
 .glass-1 {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.018);
+  border: 1px solid rgba(255, 255, 255, 0.055);
+  backdrop-filter: blur(10px);
 }
 .glass-2 {
-  background: rgba(124, 58, 237, 0.05);
-  border: 1px solid rgba(124, 58, 237, 0.2);
-  backdrop-filter: blur(12px);
+  background: rgba(124, 58, 237, 0.06);
+  border: 1px solid rgba(124, 58, 237, 0.22);
+  backdrop-filter: blur(14px);
 }
 .glass-3 {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(16px);
+  backdrop-filter: blur(20px);
 }
 
-/* ── Gradient text ── */
+/* ── Gradient text — cinematic, electric ── */
 .gradient-text {
-  background: linear-gradient(120deg, #e2d9ff 0%, #a78bfa 35%, #c026d3 75%, #e879f9 100%);
+  background: linear-gradient(
+    125deg,
+    #e2d9ff 0%,
+    #a78bfa 30%,
+    #7c3aed 55%,
+    #c026d3 80%,
+    #f0abfc 100%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  filter: drop-shadow(0 0 20px rgba(167, 139, 250, 0.3));
+  filter: drop-shadow(0 0 24px rgba(167, 139, 250, 0.35));
 }
 .gradient-text-terminal {
-  background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
+  background: linear-gradient(135deg, #00ff88 0%, #00e077 50%, #00cc6a 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-/* ── Terminal cursor ── */
+/* ── Terminal cursors ── */
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
@@ -138,7 +165,7 @@ h1, h2, h3, h4 {
 .cursor-blink {
   display: inline-block;
   width: 0.55em;
-  height: 1.1em;
+  height: 1.05em;
   background: #00ff88;
   vertical-align: text-bottom;
   animation: blink 1s step-end infinite;
@@ -146,13 +173,13 @@ h1, h2, h3, h4 {
 .cursor-blink-purple {
   display: inline-block;
   width: 2px;
-  height: 1.1em;
+  height: 1.05em;
   background: #a78bfa;
   vertical-align: text-bottom;
   animation: blink 1s step-end infinite;
 }
 
-/* ── Animated grid ── */
+/* ── Animated grids ── */
 @keyframes grid-drift {
   0%   { background-position: 0 0; }
   100% { background-position: 60px 60px; }
@@ -163,20 +190,20 @@ h1, h2, h3, h4 {
 }
 .bg-grid {
   background-image:
-    linear-gradient(rgba(124, 58, 237, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(124, 58, 237, 0.06) 1px, transparent 1px);
+    linear-gradient(rgba(124, 58, 237, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 58, 237, 0.07) 1px, transparent 1px);
   background-size: 60px 60px;
   animation: grid-drift 24s linear infinite;
 }
 .bg-grid-fine {
   background-image:
-    linear-gradient(rgba(124, 58, 237, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(124, 58, 237, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(124, 58, 237, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 58, 237, 0.045) 1px, transparent 1px);
   background-size: 24px 24px;
   animation: grid-drift-fine 32s linear infinite;
 }
 
-/* ── Scan line effect ── */
+/* ── Scan line ── */
 @keyframes scan {
   0% { transform: translateY(-100%); }
   100% { transform: translateY(100vh); }
@@ -189,14 +216,14 @@ h1, h2, h3, h4 {
   height: 1px;
   background: linear-gradient(to right,
     transparent 0%,
-    rgba(124, 58, 237, 0.12) 20%,
-    rgba(0, 255, 136, 0.06) 50%,
-    rgba(124, 58, 237, 0.12) 80%,
+    rgba(124, 58, 237, 0.15) 20%,
+    rgba(167, 139, 250, 0.08) 50%,
+    rgba(124, 58, 237, 0.15) 80%,
     transparent 100%
   );
   pointer-events: none;
   z-index: 9999;
-  animation: scan 14s linear infinite;
+  animation: scan 16s linear infinite;
 }
 
 /* ── Atmospheric animations ── */
@@ -205,40 +232,26 @@ h1, h2, h3, h4 {
   50%       { transform: translateY(-6px); }
 }
 @keyframes pulse-glow {
-  0%, 100% { opacity: 0.5; }
+  0%, 100% { opacity: 0.4; }
   50%       { opacity: 1; }
 }
 @keyframes shimmer-x {
   0%   { transform: translateX(-100%); }
   100% { transform: translateX(300%); }
 }
-.animate-float {
-  animation: float 4s ease-in-out infinite;
-}
-.animate-pulse-glow {
-  animation: pulse-glow 3s ease-in-out infinite;
-}
+.animate-float      { animation: float 4s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
 
-/* ── Section layout ── */
+/* ── Section layout — more cinematic spacing ── */
 .section-container {
-  max-width: 1280px;
+  max-width: 1320px;
   margin: 0 auto;
-  padding: 0 3.5rem;
+  padding: 0 4rem;
 }
+@media (max-width: 1024px) { .section-container { padding: 0 2.5rem; } }
+@media (max-width: 768px)  { .section-container { padding: 0 1.5rem; } }
 
-@media (max-width: 1024px) {
-  .section-container {
-    padding: 0 2.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .section-container {
-    padding: 0 1.5rem;
-  }
-}
-
-/* ── Noise texture overlay ── */
+/* ── Noise texture ── */
 .noise::after {
   content: '';
   position: absolute;
@@ -248,7 +261,5 @@ h1, h2, h3, h4 {
   pointer-events: none;
 }
 
-/* ── Framer Motion / GSAP will-change hints ── */
-.will-animate {
-  will-change: transform, opacity;
-}
+/* ── will-change hints ── */
+.will-animate { will-change: transform, opacity; }

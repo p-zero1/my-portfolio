@@ -45,10 +45,10 @@ export default function CorePresence() {
                   transition={{ duration: 0.8, delay: i * 0.15, ease: [0, 0, 0.2, 1] }}
                   className={
                     i === 0
-                      ? 'font-display text-4xl md:text-5xl xl:text-6xl font-bold text-text-1 leading-[1.1] tracking-[0.02em]'
+                      ? 'font-display text-4xl md:text-5xl xl:text-[3.75rem] font-semibold text-text-1 leading-[1.08] tracking-[0.015em]'
                       : i === 1
                       ? 'font-display text-2xl md:text-3xl font-medium text-text-2 leading-snug tracking-[0.01em]'
-                      : 'text-base text-text-3 leading-relaxed max-w-md font-light'
+                      : 'font-sans text-base text-text-3 leading-relaxed max-w-md font-light'
                   }
                 >
                   {line}

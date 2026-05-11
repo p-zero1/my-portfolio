@@ -30,10 +30,10 @@ export default function PhilosophyField() {
           transition={{ duration: 0.7 }}
           className="mb-16 max-w-xl"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-text-1 tracking-tight leading-[1.1]">
+          <h2 className="font-display text-4xl md:text-5xl font-extrabold text-text-1 tracking-[0.01em] leading-[1.08]">
             Engineering philosophy
           </h2>
-          <p className="mt-4 text-text-3 text-lg leading-relaxed">
+          <p className="mt-4 text-text-3 text-lg leading-relaxed font-sans font-light">
             Principles that guide every architecture decision.
           </p>
         </motion.div>
@@ -71,7 +71,7 @@ export default function PhilosophyField() {
               </p>
 
               {/* Title */}
-              <h3 className="text-xl font-semibold text-text-1 mb-4 group-hover:text-purple-pale transition-colors duration-300">
+              <h3 className="font-display text-xl font-bold text-text-1 mb-4 tracking-[0.01em] group-hover:text-purple-pale transition-colors duration-300">
                 {p.title}
               </h3>
 

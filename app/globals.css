@@ -55,7 +55,8 @@ body {
 
 h1, h2, h3, h4 {
   font-family: var(--font-display), system-ui, sans-serif;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.02em;
+  font-weight: 700;
 }
 
 /* ── Selection ── */
@@ -71,9 +72,14 @@ h1, h2, h3, h4 {
 ::-webkit-scrollbar-thumb:hover { background: #7c3aed88; }
 
 /* ── Typography ── */
-.font-display { font-family: var(--font-display), system-ui, sans-serif; }
+.font-display { font-family: var(--font-display), system-ui, sans-serif; letter-spacing: 0.02em; }
 .font-sans    { font-family: var(--font-sans), system-ui, sans-serif; }
-.font-mono    { font-family: var(--font-mono), 'Courier New', monospace; }
+.font-mono    { font-family: var(--font-mono), 'Courier New', monospace; font-variant-ligatures: common-ligatures; }
+
+/* Fira Code ligatures */
+@supports (font-variant-ligatures: contextual) {
+  .font-mono { font-variant-ligatures: contextual; }
+}
 
 /* ── Glow utilities ── */
 .glow-purple {
@@ -111,10 +117,11 @@ h1, h2, h3, h4 {
 
 /* ── Gradient text ── */
 .gradient-text {
-  background: linear-gradient(135deg, #c4b5fd 0%, #a78bfa 45%, #e879f9 100%);
+  background: linear-gradient(120deg, #e2d9ff 0%, #a78bfa 35%, #c026d3 75%, #e879f9 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  filter: drop-shadow(0 0 20px rgba(167, 139, 250, 0.3));
 }
 .gradient-text-terminal {
   background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);

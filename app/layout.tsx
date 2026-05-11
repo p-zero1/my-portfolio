@@ -1,26 +1,26 @@
 import type { Metadata } from 'next'
-import { Oxanium, Outfit, JetBrains_Mono } from 'next/font/google'
+import { Chakra_Petch, Barlow, Fira_Code } from 'next/font/google'
 import './globals.css'
 import LenisProvider from '@/components/layout/LenisProvider'
 import CursorGlow from '@/components/layout/CursorGlow'
 import SystemStatusBar from '@/components/layout/SystemStatusBar'
 import { site } from '@/content/site'
 
-const oxanium = Oxanium({
+const chakraPetch = Chakra_Petch({
   variable: '--font-display',
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['300', '400', '500', '600', '700'],
+  style: ['normal', 'italic'],
 })
-const outfit = Outfit({
+const barlow = Barlow({
   variable: '--font-sans',
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
 })
-const jetbrainsMono = JetBrains_Mono({
+const firaCode = Fira_Code({
   variable: '--font-mono',
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
-  style: ['normal', 'italic'],
 })
 
 export const metadata: Metadata = {
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${oxanium.variable} ${outfit.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${chakraPetch.variable} ${barlow.variable} ${firaCode.variable}`} suppressHydrationWarning>
       <body className="bg-base text-text-1 antialiased overflow-x-hidden" suppressHydrationWarning>
         <LenisProvider>
           {/* Scan line effect */}
